@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident Checklist | DFARS 72-Hour Response</title>
+<meta name="description" content="Free cyber incident checklist for defense contractors. Prepare before it happens, track the 72-hour DFARS reporting clock when it does.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">AI Tech Pros <span>MAPS Tools</span></div>
+    <h1>Incident Checklist</h1>
+    <p class="sub">DFARS 252.204-7012 gives you 72 hours from discovery to report a cyber incident to DoD. This is the prepare list, the hour-by-hour response tracker, and the report field guide.</p>
+    <div id="countdown" class="countdown hidden">
+      <div class="cd-label">Time left to report</div>
+      <div class="cd-time" id="cdTime">--:--:--</div>
+      <div class="cd-disc" id="cdDisc"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2>Active incident</h2>
+    <div class="grid2">
+      <label class="fld">Incident name <input id="inc_name" placeholder="e.g., Ransomware on file server"></label>
+      <label class="fld">Discovery date and time <input id="inc_disc" type="datetime-local"></label>
+    </div>
+    <div class="row">
+      <button id="startInc" class="btn primary">Start the 72-hour clock</button>
+      <button id="clearInc" class="btn ghost danger">Clear incident</button>
+      <span class="muted small">The clock starts at discovery, not when you finish investigating.</span>
+    </div>
+    <div id="phases"></div>
+  </section>
+
+  <section class="card">
+    <h2>Incident log</h2>
+    <div class="row">
+      <input id="logEntry" placeholder="Timestamped note: what happened, what you did…" class="grow">
+      <button id="addLog" class="btn">Add entry</button>
+    </div>
+    <div id="logList"></div>
+  </section>
+
+  <section class="card">
+    <h2>What the DoD report must include</h2>
+    <div id="reportFields"></div>
+    <div class="row">
+      <button id="exportMd" class="btn primary">Download incident record (Markdown)</button>
+      <button id="printBtn" class="btn ghost">Print</button>
+    </div>
+    <p class="muted small">File the actual report through the DoD DIBNet portal (dibnet.dod.mil). This tool tracks your response; it does not file for you.</p>
+  </section>
+
+  <footer class="foot">
+    <p>Free tool from <strong>Neo Harvard</strong>, CEO of <a href="https://aitechpros.ai">AI Tech Pros</a>. Part of the <a href="https://github.com/nehemiah313/maps-framework">MAPS framework</a> family. Guidance only, not legal advice. Confirm reporting duties with your contracting officer and counsel.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
